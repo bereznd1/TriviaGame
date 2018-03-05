@@ -1,0 +1,37 @@
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
+#all-content {
+    width: 600px;
+    height: 91.6vh;
+    border-radius: 20px;
+    margin: 0 auto;
+    background-color: #7fe1ef;
+    padding: 20px;
+    border-style: solid;
+    border-width: 10px;
+    border-color: #000000;
+
+
+    -webkit-box-shadow: 6px 5px 42px 21px rgba(0,0,0,0.75);
+    -moz-box-shadow: 6px 5px 42px 21px rgba(0,0,0,0.75);
+    box-shadow: 6px 5px 42px 21px rgba(0,0,0,0.75);
+}
+
+header {
+    text-align: center;
+}
+
+
+#start {
+
+    text-align: center;
+    background-color: red;
+    color: #ffffff;
+    font-size: 44px;
+    padding: 10px 20px;
+    border-style: none;
+
+}
+
