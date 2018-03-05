@@ -19,15 +19,15 @@ var unanswered = 0;
 
 var questionsAnswers = [
 
-    /*q1:*/ "<p>What is question 1?</p><div class='options'>Option 1</div><div class='options'>Option 2</div><div class='options' value='correct-choice'>Option 3</div><div class='options'>Option 4</div>",
+    /*q1:*/ "<div>Time remaining: <span id='time-left-during'></span></div><p>What is question 1?</p><div class='options'>Option 1</div><div class='options'>Option 2</div><div class='options' value='correct-choice'>Option 3</div><div class='options'>Option 4</div>",
 
-    /* q2:*/ "<p>What is question 2?</p><div class='options'>Option 1</div><div class='options' value='correct-choice'>Option 2</div><div class='options'>Option 3</div><div class='options'>Option 4</div>",
+    /* q2:*/ "<div>Time remaining: <span id='time-left-during'></span></div><p>What is question 2?</p><div class='options'>Option 1</div><div class='options' value='correct-choice'>Option 2</div><div class='options'>Option 3</div><div class='options'>Option 4</div>",
 
-        /*q3:*/ "<p>What is question 3?</p><div class='options'>Option 1</div><div class='options'>Option 2</div><div class='options'>Option 3</div><div class='options' value='correct-choice'>Option 4</div>",
+        /*q3:*/ "<div>Time remaining: <span id='time-left-during'></span></div><p>What is question 3?</p><div class='options'>Option 1</div><div class='options'>Option 2</div><div class='options'>Option 3</div><div class='options' value='correct-choice'>Option 4</div>",
 
-   /* q4:*/ "<p>What is question 4?</p><div class='options'>Option 1</div><div class='options' value='correct-choice'>Option 2</div><div class='options'>Option 3</div><div class='options'>Option 4</div>",
+   /* q4:*/ "<div>Time remaining: <span id='time-left-during'></span></div><p>What is question 4?</p><div class='options'>Option 1</div><div class='options' value='correct-choice'>Option 2</div><div class='options'>Option 3</div><div class='options'>Option 4</div>",
 
-    /* q5: */ "<p>What is question 5?</p><div class='options' value='correct-choice'>Option 1</div><div class='options'>Option 2</div><div class='options'>Option 3</div><div class='options'>Option 4</div>"
+    /* q5: */ "<div>Time remaining: <span id='time-left-during'></span></div><p>What is question 5?</p><div class='options' value='correct-choice'>Option 1</div><div class='options'>Option 2</div><div class='options'>Option 3</div><div class='options'>Option 4</div>"
 
 
 
@@ -83,23 +83,7 @@ var timeoutResults = [
 ]
 
 
-
-function start () {
-
-
-    $("#time-remaining").html("Time remaining: <span id='time-left-during'></span>");
-    
-    $("#question-1").html(questionsAnswers[0]);
-
-    $("#question-2").html(questionsAnswers[1]);
-
-    $("#question-3").html(questionsAnswers[2]);
-
-    $("#question-4").html(questionsAnswers[3]);
-
-    $("#question-5").html(questionsAnswers[4]);
-
-
+function runQuiz (questionsAnswers, correctResults, wrongResults,timeoutResults) {
 
 
 }
@@ -108,9 +92,8 @@ function start () {
 
 
 
+///TRY PUTTING THE BOTTOM SHIT INTO A FOR LOOP? AND MAKING EACH ANSWER PART OF AN ARRAY OR OBJECT??
 
-
-/*
 
 //start function for when start button is clicked
 function start() {
@@ -120,7 +103,7 @@ function start() {
 
 
     //put question 1 into the html
-    $("#question-1").html(questionsAnswers[0]);
+    $("#question-content").html(questionsAnswers[0]);
     //set countdown timer to track when time's up for that question
     answerTimer = setTimeout(timeout1, 3000);
 
@@ -209,4 +192,9 @@ function start() {
 
 }
 
-*/
+
+
+
+
+
+
