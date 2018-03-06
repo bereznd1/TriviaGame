@@ -4,9 +4,16 @@ var answerTimeLeft;
 var answerSeconds;
 
 //creates the global score variables
+/*
 var correct = 0;
 var wrong = 0;
 var unanswered = 0;
+*/
+
+//creates variables that will be used to manipulate the main-div & the time remaining div
+var getMainDiv;
+var fillTimeRemaining;
+
 
 
 //creates the html for each question & set of answers
@@ -22,42 +29,53 @@ var q5 = "<p>What is question 5?</p><input type='radio' name='question5' id='q5o
 
 
 
-
+//sets up a function that will get count down the seconds remaining in the quiz
 function answerCountDown() {
     answerSeconds--;
 
     $("#time-left-during").html(answerSeconds);
 
+    /*
+        if 
+        $(".submit").on("click", function () {
+            answerSec
+    
+        }
+    */
 
 
 
 }
 
 
-// PUT THE TIME REMAINING INTO THE CODE, EACH QUESTION, AND A SUBMIT BUTTON
 
+// function to be called when game first starts or when the user clicks the "start over" button
 function start() {
 
-    // SETTIMEOUT FUNCTION WHICH USES THE "SUBMIT" FUNCTION
-    answerTimer = setTimeout(submit, 5000);
 
-    //SET INTERVAL TO SHOW SECONDS ONSCREEN
 
-    //set up on-screen seconds countdown
-    answerSeconds = 5;
+
+    //Creates a timer for how long the user has to fill out the quiz
+    answerTimer = setTimeout(submit, 30000);
+
+
+    //Sets up on-screen seconds countdown
+    answerSeconds = 30;
     answerTimeLeft = setInterval(answerCountDown, 1000);
 
 
- 
-
     //sets up variable to select the main-div
-    var getMainDiv = $("#main-div");
+    getMainDiv = $("#main-div");
+
+    //creates a new div for the "time-remaining" 
+    fillTimeRemaining = $("<div id='time-remaining'>").html("Time remaining: <span id='time-left-during'></span>");
+
+
     //clears the main-div so the new content is ready to be put into it
     getMainDiv.empty();
 
 
-    //creates a new div for the "time-remaining" & appends it to the main-div
-    var fillTimeRemaining = $("<div id='time-remaining'>").html("Time remaining: <span id='time-left-during'></span>") ;
+    // appends the "time remaining" div to the main-div
     getMainDiv.append(fillTimeRemaining);
 
     //creates a new div for the each of the questions & appends them to the main-div
@@ -89,12 +107,19 @@ function start() {
 //Function which is activated when user clicks submit or when time runs out
 function submit() {
 
+
     clearTimeout(answerTimer);
     clearInterval(answerTimeLeft);
 
-    $("#time-remaining").html("Time remaining: <span id='time-left-during'></span>");
-    $("#time-left-during").html(answerSeconds);
 
+    //sets the initial value of the score variables to 0
+    var correct = 0;
+    var wrong = 0;
+    var unanswered = 0;
+
+
+
+    //sets up variables to check if the correct choice for each answer was selected
     var q1CorrectAnswer = $("#q1option4").prop("checked");
     var q2CorrectAnswer = $("#q2option3").prop("checked");
     var q3CorrectAnswer = $("#q3option1").prop("checked");
@@ -246,9 +271,36 @@ function submit() {
 
 
 
-    //DISPLAY RESULTS OF ANSWERS 
+    //DISPLAYS RESULTS OF ANSWERS 
 
-    $("#main-div").html(correct + "<br>" + wrong + "<br>" + unanswered);
+
+    //sets up variable to select the main-div
+    getMainDiv = $("#main-div");
+
+    //creates a new div for the "time-remaining" 
+    fillTimeRemaining = $("<div id='time-remaining'>").html("Time remaining: <span id='time-left-during'></span>");
+
+
+    //clears the main-div so the new content is ready to be put into it
+    getMainDiv.empty();
+
+
+
+
+    getMainDiv.append("<div id = 'results'>").html(correct + '<br>' + wrong + '<br>' + unanswered);
+
+
+    //prepends the "time remaining" div to the main-div
+    getMainDiv.prepend(fillTimeRemaining);
+
+    //fills in the number of seconds that the clock was stopped at when answers were submitted
+    $("#time-left-during").html(answerSeconds);
+
+
+    //create a variable to hold the html for the Start Over button & append that button to the main-div
+    var startOver = $("<br><button class = 'startOver' onclick = 'start()'>").text("Start Over!");
+    getMainDiv.append(startOver);
+
 
 
 
