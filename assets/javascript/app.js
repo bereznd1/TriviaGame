@@ -3,13 +3,6 @@ var answerTimer;
 var answerTimeLeft;
 var answerSeconds;
 
-//creates the global score variables
-/*
-var correct = 0;
-var wrong = 0;
-var unanswered = 0;
-*/
-
 //creates variables that will be used to manipulate the main-div & the time remaining div
 var getMainDiv;
 var fillTimeRemaining;
@@ -31,17 +24,11 @@ var q5 = "<p>What is question 5?</p><input type='radio' name='question5' id='q5o
 
 //sets up a function that will get count down the seconds remaining in the quiz
 function answerCountDown() {
+    
     answerSeconds--;
 
     $("#time-left-during").html(answerSeconds);
 
-    /*
-        if 
-        $(".submit").on("click", function () {
-            answerSec
-    
-        }
-    */
 
 
 
@@ -52,11 +39,8 @@ function answerCountDown() {
 // function to be called when game first starts or when the user clicks the "start over" button
 function start() {
 
-
-
-
     //Creates a timer for how long the user has to fill out the quiz
-    answerTimer = setTimeout(submit, 30000);
+    answerTimer = setTimeout(submit, 31000);
 
 
     //Sets up on-screen seconds countdown
@@ -98,7 +82,6 @@ function start() {
     //creates a new div for the submit & appends it to the main-div
     var fillSubmit = $("<button class='submit' onclick='submit()'>").text("Submit");
     getMainDiv.append(fillSubmit);
-
 
 }
 
@@ -270,7 +253,6 @@ function submit() {
     }
 
 
-
     //DISPLAYS RESULTS OF ANSWERS 
 
 
@@ -302,128 +284,4 @@ function submit() {
     getMainDiv.append(startOver);
 
 
-
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-//start function for when start button is clicked
-function start() {
-
-
-    // for (var i = 0; i < questionsAnswers.length; i++) {
-
-
-    //put question 1 into the html
-    $("#question-1").html(questionsAnswers[0]);
-    //set countdown timer to track when time's up for that question
-    answerTimer = setTimeout(timeout1, 3000);
-
-    //set up on-screen seconds countdown
-    answerSeconds = 3;
-    answerTimeLeft = setInterval(answerCountDown, 1000);
-
-    function answerCountDown() {
-        answerSeconds--;
-
-        $("#time-left-during").html(answerSeconds);
-
-
-    }
-
-
-
-
-    //set up what happens when you click one of the answers
-    $(".options").on("click", function () {
-
-        //make a variable that is equal to the value of the specific answer clicked
-        var clickedAnswerID = $(this).attr("value");
-
-        //if the answer clicked has the value of correct choice, then clear the timeout, stop the on-screen countdown, and put the corresponding info into the html
-        if (clickedAnswerID === "correct-choice") {
-
-
-            clearTimeout(answerTimer);
-            clearInterval(answerTimeLeft);
-            $("#question-content").html(correctResults[0]);
-            $("#time-left").html(answerSeconds);
-            correct++;
-
-            //after 5 seconds, show the next question
-            resultDisplayTimer = setTimeout(function () { $("#question-content").html(questionsAnswers[1]); }, 5000);
-
-
-
-
-
-        }
-
-        //if the answer clicked DOESN'T have the value of correct choice, then clear the timeout, stop the on-screen countdown, and put the corresponding info into the html
-        else {
-
-            clearTimeout(answerTimer);
-            clearInterval(answerTimeLeft);
-            $("#question-content").html(wrongResults[0]);
-            $("#time-left").html(answerSeconds);
-            wrong++;
-
-            //after 5 seconds, show the next question
-            resultDisplayTimer = setTimeout(function () { $("#question-content").html(questionsAnswers[1]); }, 5000);
-        }
-
-
-    });
-
-
-
-
-
-    //sets up what happens when time runs out for an answer
-    function timeout1() {
-
-        clearInterval(answerTimeLeft);
-        $("#question-content").html(timeoutResults[0]);
-        answerSeconds = 0;
-        $("#time-left").html(answerSeconds);
-
-        unanswered++;
-
-        //after 5 seconds, show the next question
-        resultDisplayTimer = setTimeout(function () { $("#question-content").html(questionsAnswers[1]); }, 5000);
-
-
-
-
-    }
-
-
-    // }
-
-
-
-}
-
-*/
