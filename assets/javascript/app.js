@@ -1,33 +1,25 @@
-//creating global timer variables
+//creates global timer variables
 var answerTimer;
 var answerTimeLeft;
 var answerSeconds;
 
-//creating the global score variables
+//creates the global score variables
 var correct = 0;
 var wrong = 0;
 var unanswered = 0;
 
 
+//creates the html for each question & set of answers
+var q1 = "<p>What is question 1?</p><input type='radio' name='question1' id='q1option1'>Option 1<input type='radio' name='question1' id='q1option2'>Option 2<input type='radio' name='question1' id='q1option3'>Option 3<input type='radio' name='question1' id='q1option4'>CORRECT";
 
+var q2 = "<p>What is question 2?</p><input type='radio' name='question2' id='q2option1'>Option 1<input type='radio' name='question2' id='q2option2'>Option 2<input type='radio' name='question2' id='q2option3'>CORRECT<input type='radio' name='question2' id='q2option4'>Option 4";
 
+var q3 = "<p>What is question 3?</p><input type='radio' name='question3' id='q3option1'>CORRECT<input type='radio' name='question3' id='q3option2'>Option 2<input type='radio' name='question3' id='q3option3'>Option 3<input type='radio' name='question3' id='q3option4'>Option 4";
 
+var q4 = "<p>What is question 4?</p><input type='radio' name='question4' id='q4option1'>Option 1<input type='radio' name='question4' id='q4option2'>CORRECT<input type='radio' name='question4' id='q4option3'>Option 3<input type='radio' name='question4' id='q4option4'>Option 4";
 
+var q5 = "<p>What is question 5?</p><input type='radio' name='question5' id='q5option1'>Option 1<input type='radio' name='question5' id='q5option2'>Option 2<input type='radio' name='question5' id='q5option3'>CORRECT<input type='radio' name='question5' id='q5option4'>Option 4";
 
-//creating the html for each question & set of answers, plus setting up a variable for the id of the correct answer to each question
-
-
-var q1 = "<p>What is question 1?</p><input type='radio' class = 'question1' name='question1' id='q1option1'>Option 1<input type='radio' class = 'question1' name='question1' id='q1option2'>Option 2<input type='radio' class = 'question1' name='question1' id='q1option3'>Option 3<input type='radio'  name='question1' class = 'question1' id='q1option4'>Option 4";
-
-var q2 = "<p>What is question 2?</p><input type='radio' name='question2' id='q2option1'>Option 1<input type='radio' name='question2' id='q2option2'>Option 2<input type='radio' name='question2' id='q2option3'>Option 3<input type='radio' name='question2' id='q2option4'>Option 4";
-
-var q3 = "<p>What is question 3?</p><input type='radio' name='question3' id='q3option1'>Option 1<input type='radio' name='question3' id='q3option2'>Option 2<input type='radio' name='question3' id='q3option3'>Option 3<input type='radio' name='question3' id='q3option4'>Option 4";
-
-var q4 = "<p>What is question 4?</p><input type='radio' name='question4' id='q4option1'>Option 1<input type='radio' name='question4' id='q4option2'>Option 2<input type='radio' name='question4' id='q4option3'>Option 3<input type='radio' name='question4' id='q4option4'>Option 4";
-
-var q5 = "<p>What is question 5?</p><input type='radio' name='question5' id='q5option1'>Option 1<input type='radio' name='question5' id='q5option2'>Option 2<input type='radio' name='question5' id='q5option3'>Option 3<input type='radio' name='question5' id='q5option4'>Option 4";
-
-var submitButton = "<button class='submit' onclick='submit()'>Submit</button>";
 
 
 
@@ -40,10 +32,6 @@ function answerCountDown() {
 
 
 }
-
-
-
-
 
 
 // PUT THE TIME REMAINING INTO THE CODE, EACH QUESTION, AND A SUBMIT BUTTON
@@ -60,34 +48,45 @@ function start() {
     answerTimeLeft = setInterval(answerCountDown, 1000);
 
 
+ 
+
+    //sets up variable to select the main-div
+    var getMainDiv = $("#main-div");
+    //clears the main-div so the new content is ready to be put into it
+    getMainDiv.empty();
 
 
+    //creates a new div for the "time-remaining" & appends it to the main-div
+    var fillTimeRemaining = $("<div id='time-remaining'>").html("Time remaining: <span id='time-left-during'></span>") ;
+    getMainDiv.append(fillTimeRemaining);
+
+    //creates a new div for the each of the questions & appends them to the main-div
+    var fillQ1 = $("<div id = 'question-1'>").html(q1);
+    getMainDiv.append(fillQ1);
+
+    var fillQ2 = $("<div id = 'question-2'>").html(q2);
+    getMainDiv.append(fillQ2);
+
+    var fillQ3 = $("<div id = 'question-3'>").html(q3);
+    getMainDiv.append(fillQ3);
+
+    var fillQ4 = $("<div id = 'question-4'>").html(q4);
+    getMainDiv.append(fillQ4);
+
+    var fillQ5 = $("<div id = 'question-5'>").html(q5);
+    getMainDiv.append(fillQ5);
 
 
-    $("#time-remaining").html("Time remaining: <span id='time-left-during'></span>");
-
-    $("#question-1").html(q1);
-
-    $("#question-2").html(q2);
-
-    $("#question-3").html(q3);
-
-    $("#question-4").html(q4);
-
-    $("#question-5").html(q5);
-
-    //SUBMIT BUTTON WHICH USES THE "SUBMIT" FUNCTION
-    $("#submit").html(submitButton);
-
-
+    //creates a new div for the submit & appends it to the main-div
+    var fillSubmit = $("<button class='submit' onclick='submit()'>").text("Submit");
+    getMainDiv.append(fillSubmit);
 
 
 }
 
 
 
-// "SUBMIT" FUNCTION
-
+//Function which is activated when user clicks submit or when time runs out
 function submit() {
 
     clearTimeout(answerTimer);
@@ -96,164 +95,161 @@ function submit() {
     $("#time-remaining").html("Time remaining: <span id='time-left-during'></span>");
     $("#time-left-during").html(answerSeconds);
 
-
-    var isQ1Answered = $(".question1").prop("checked");
-    var isQ2Answered = $("[name='question2']").prop("checked");
-    var isQ3Answered = $("[name='question3']").prop("checked");
-    var isQ4Answered = $("[name='question4']").prop("checked");
-    var isQ5Answered = $("[name='question5']").prop("checked");
-
-
     var q1CorrectAnswer = $("#q1option4").prop("checked");
-    var q2CorrectAnswer = $("#q1option3").prop("checked");
-    var q3CorrectAnswer = $("#q1option1").prop("checked");
-    var q4CorrectAnswer = $("#q1option2").prop("checked");
-    var q5CorrectAnswer = $("#q1option3").prop("checked");
+    var q2CorrectAnswer = $("#q2option3").prop("checked");
+    var q3CorrectAnswer = $("#q3option1").prop("checked");
+    var q4CorrectAnswer = $("#q4option2").prop("checked");
+    var q5CorrectAnswer = $("#q5option3").prop("checked");
 
 
-    //if the correct choice for question 1 has been selected, add a point to the "correct" variable
+    // QUESTION 1 CHECKER
+
+    // if at least one answer selected for question 1...
+    if ($("input[name=question1]:checked").length > 0) {
 
 
-    // if none of the choices for question 1 have been selected, add a point to the "unanwered" variable
-
-
-//at least one answer selected
-    if (  ($("input[name=question1]:checked").length > 0)  && (q1CorrectAnswer === true) {
-
-        
-
+        //if the selected answer is the correct one, add a point to "correct" variable
         if (q1CorrectAnswer) {
             correct++;
-            console.log("correct answer selected");
-
         }
 
+        //if the selected answer is NOT the correct one, add a point to "wrong" variable
         else {
 
             wrong++;
-            console.log("wrong answer selected");
         }
 
     }
 
-    //no answers selected
+    //if no answers selected, add a point to the "unanswered" variable
     else {
 
         unanswered++;
-        console.log("no answer selected");
 
     }
 
 
-    /*
-        if (isQ1Answered === true) {
-            console.log(true);
-            unanswered++;
-    
+
+    // QUESTION 2 CHECKER
+
+    // if at least one answer selected for question 2...
+    if ($("input[name=question2]:checked").length > 0) {
+
+
+        //if the selected answer is the correct one, add a point to "correct" variable
+        if (q2CorrectAnswer) {
+            correct++;
+
         }
-    */
 
-    // if the correct choice for question 1 has NOT been selected, BUT at least one of the other (incorrect) choices has, add a point to the "wrong" variable
+        //if the selected answer is NOT the correct one, add a point to "wrong" variable
+        else {
 
-
-
-
-
-    //if the correct choice for question 2 has been selected, add a point to the "correct" variable
-    if (q2CorrectAnswer) {
-        correct++;
+            wrong++;
+        }
 
     }
 
-    // if none of the choices for question 2 have been selected, add a point to the "unanwered" variable
-    if (!isQ2Answered) {
+    //if no answers selected, add a point to the "unanswered" variable
+    else {
+
         unanswered++;
 
     }
 
-    // if the correct choice for question 2 has NOT been selected, BUT at least one of the other (incorrect) choices has, add a point to the "wrong" variable
-    if (!q2CorrectAnswer && !isQ2Answered) {
-        wrong++;
+
+
+    //QUESTION 3 CHECKER
+
+    // if at least one answer selected for question 3...
+    if ($("input[name=question3]:checked").length > 0) {
+
+
+        //if the selected answer is the correct one, add a point to "correct" variable
+        if (q3CorrectAnswer) {
+            correct++;
+
+        }
+
+        //if the selected answer is NOT the correct one, add a point to "wrong" variable
+        else {
+
+            wrong++;
+        }
 
     }
 
+    //if no answers selected, add a point to the "unanswered" variable
+    else {
 
-
-
-
-    //if the correct choice for question 3 has been selected, add a point to the "correct" variable
-    if (q3CorrectAnswer) {
-        correct++;
-
-    }
-
-    // if none of the choices for question 3 have been selected, add a point to the "unanwered" variable
-    if (!isQ3Answered) {
         unanswered++;
 
     }
 
-    // if the correct choice for question 3 has NOT been selected, BUT at least one of the other (incorrect) choices has, add a point to the "wrong" variable
-    if (!q3CorrectAnswer && !isQ3Answered) {
-        wrong++;
+
+
+    //QUESTION 4 CHECKER
+
+    // if at least one answer selected for question 4...
+    if ($("input[name=question4]:checked").length > 0) {
+
+
+        //if the selected answer is the correct one, add a point to "correct" variable
+        if (q4CorrectAnswer) {
+            correct++;
+
+        }
+
+        //if the selected answer is NOT the correct one, add a point to "wrong" variable
+        else {
+
+            wrong++;
+        }
 
     }
 
+    //if no answers selected, add a point to the "unanswered" variable
+    else {
 
-
-
-
-    //if the correct choice for question 4 has been selected, add a point to the "correct" variable
-    if (q4CorrectAnswer) {
-        correct++;
-
-    }
-
-    // if none of the choices for question 4 have been selected, add a point to the "unanwered" variable
-    if (!isQ4Answered) {
         unanswered++;
 
     }
 
-    // if the correct choice for question 4 has NOT been selected, BUT at least one of the other (incorrect) choices has, add a point to the "wrong" variable
-    if (!q4CorrectAnswer && !isQ4Answered) {
-        wrong++;
+
+
+    //QUESTION 5 CHECKER
+
+    // if at least one answer selected for question 5...
+    if ($("input[name=question5]:checked").length > 0) {
+
+
+        //if the selected answer is the correct one, add a point to "correct" variable
+        if (q5CorrectAnswer) {
+            correct++;
+
+        }
+
+        //if the selected answer is NOT the correct one, add a point to "wrong" variable
+        else {
+
+            wrong++;
+        }
 
     }
 
+    //if no answers selected, add a point to the "unanswered" variable
+    else {
 
-
-
-
-    //if the correct choice for question 5 has been selected, add a point to the "correct" variable
-    if (q5CorrectAnswer) {
-        correct++;
-
-    }
-
-    // if none of the choices for question 5 have been selected, add a point to the "unanwered" variable
-    if (!isQ5Answered) {
         unanswered++;
 
     }
 
-    // if the correct choice for question 5 has NOT been selected, BUT at least one of the other (incorrect) choices has, add a point to the "wrong" variable
-    if (!q5CorrectAnswer && !isQ5Answered) {
-        wrong++;
-
-    }
 
 
-    $("#question-content").html(correct + "<br>" + wrong + "<br>" + unanswered);
+    //DISPLAY RESULTS OF ANSWERS 
 
+    $("#main-div").html(correct + "<br>" + wrong + "<br>" + unanswered);
 
-
-    // CHECKS IF THE "CHECKED" ATTR OF EACH QUESTION IS CORRESPONDING TO THE CORRECT CHECKBOX
-    // IF YES, ADD A POINT TO "CORRECT"
-    //IF NO, ADD A POINT TO "WRONG"
-    //IF BLANK, ADD A POINT TO UNANSWERED
-
-    // DISPLAY THE COUNT OF EACH IN THE HTML
 
 
 
