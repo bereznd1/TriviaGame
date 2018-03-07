@@ -6,12 +6,9 @@
 html {
     font-family: 'Roboto', sans-serif;
     background-image: url('../images/pac_bg.gif');
-
 }
 
-
 #all-content {
-    
     width: 800px;
     height: auto;
     border-radius: 20px;
@@ -21,8 +18,6 @@ html {
     border-style: solid;
     border-width: 10px;
     border-color: #000000;
-
-
     -webkit-box-shadow: 0px 0px 66px -6px rgba(255,255,255,1);
     -moz-box-shadow: 0px 0px 66px -6px rgba(255,255,255,1);
     box-shadow: 0px 0px 66px -6px rgba(255,255,255,1);
@@ -33,6 +28,16 @@ header {
     margin-bottom: 25px;
 }
 
+#pac-start {
+    width: 500px;
+    border-radius: 40px;
+    border-style: solid;
+    border-width: 8px;
+    border-color: #000000;
+    -webkit-box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
+}
 
 #start {
 
@@ -49,37 +54,18 @@ header {
     border-width: 7px;
     border-color: #000000;
     border-radius: 40px;
-    
     -webkit-box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
-
     transition: all .1s ease-in;
-    
-
 }
-
 
 #start:hover {
     cursor: pointer;
     -webkit-box-shadow: 0px 0px 20px 2px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 20px 2px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 20px 2px rgba(0,0,0,0.75);
-
 }
-
-
-#pac-start {
-    width: 500px;
-    border-radius: 40px;
-    border-style: solid;
-    border-width: 8px;
-    border-color: #000000;
-    -webkit-box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
-}
-
 
 #time-remaining {
     position: fixed;
@@ -97,7 +83,6 @@ header {
     -moz-box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
 }
-
 
 #time-left-during {
     background-color: #ffffff;
@@ -124,14 +109,11 @@ header {
     -webkit-box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
-
 }
 
 .choices {
-
     background-color: hsla(0, 56%, 38%, 0.85);
     color: #ffffff;
-   
     margin-bottom: 25px;
     padding: 10px;
     border-radius: 20px;
@@ -143,47 +125,7 @@ header {
     box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
 }
 
-
-
-.start-over {
-
-    position: relative;
-    left: 175px;
-    text-align: center;
-    background-color: red;
-    color: #000000;
-    font-family: "Abuse";
-    font-size: 60px;
-    text-shadow: 0px 5px 10px rgba(71, 71, 71, 1);
-    padding: 10px 50px;
-    margin-top: 35px;
-    margin-bottom: 10px;
-    border-style: solid;
-    border-width: 7px;
-    border-color: #000000;
-    border-radius: 40px;
-    
-    -webkit-box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
-
-    transition: all .1s ease-in;
-
-
-}
-
-.start-over:hover {
-    cursor: pointer;
-    -webkit-box-shadow: 0px 0px 20px 2px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 20px 2px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 20px 2px rgba(0,0,0,0.75);
-}
-
-
-
-
 .submit {
-
     position: relative;
     left: 230px;
     text-align: center;
@@ -199,15 +141,11 @@ header {
     border-width: 7px;
     border-color: #000000;
     border-radius: 40px;
-    
     -webkit-box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
-
     transition: all .1s ease-in;
-
 }
-
 
 .submit:hover {
     cursor: pointer;
@@ -228,10 +166,10 @@ header {
     box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
 }
 
+
 #results-container {
     display: inline-block;
     margin-left: 20px;
-
 }
 
 .results {
@@ -286,3 +224,40 @@ header {
     font-weight: bold;
     font-size: 16px;
 }
+
+.start-over {
+    position: relative;
+    left: 175px;
+    text-align: center;
+    background-color: red;
+    color: #000000;
+    font-family: "Abuse";
+    font-size: 60px;
+    text-shadow: 0px 5px 10px rgba(71, 71, 71, 1);
+    padding: 10px 50px;
+    margin-top: 35px;
+    margin-bottom: 10px;
+    border-style: solid;
+    border-width: 7px;
+    border-color: #000000;
+    border-radius: 40px;
+    -webkit-box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
+    transition: all .1s ease-in;
+}
+
+.start-over:hover {
+    cursor: pointer;
+    -webkit-box-shadow: 0px 0px 20px 2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 20px 2px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 20px 2px rgba(0,0,0,0.75);
+}
+
+
+
+
+
+
+
+
