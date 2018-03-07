@@ -43,10 +43,10 @@ function answerCountDown() {
 function start() {
 
     //Creates a timer for how long the user has to fill out the quiz
-    answerTimer = setTimeout(submit, 301000);
+    answerTimer = setTimeout(submit, 181000);
 
     //Sets up on-screen seconds countdown
-    answerSeconds = 300;
+    answerSeconds = 180;
     answerTimeLeft = setInterval(answerCountDown, 1000);
 
 
@@ -54,7 +54,7 @@ function start() {
     getMainDiv = $("#main-div");
 
     //creates a new div for the "time-remaining" 
-    fillTimeRemaining = $("<div id='time-remaining'>").html("Time Left: <span id='time-left-during'>300</span>");
+    fillTimeRemaining = $("<div id='time-remaining'>").html("Time Left: <span id='time-left-during'>180</span>");
 
 
     //clears the main-div so the new content is ready to be put into it
@@ -129,7 +129,7 @@ function submit() {
     var q7CorrectAnswer = $("#q7option2").prop("checked");
     var q8CorrectAnswer = $("#q8option2").prop("checked");
     var q9CorrectAnswer = $("#q9option4").prop("checked");
-    var q10CorrectAnswer = $("#105option1").prop("checked");
+    var q10CorrectAnswer = $("#q10option1").prop("checked");
 
 
     // QUESTION 1 CHECKER
@@ -428,10 +428,11 @@ function submit() {
     //clears the main-div so the new content is ready to be put into it
     getMainDiv.empty();
 
+    //sets up a variable to store the html for the results div
+    var resultsDiv = "<center><img id='pac-results' src='assets/images/pac_results.jpg'><div id='results-container'><div class = 'results'>You got a: <br> <div id = 'score'>" + correct + "/10!</div></div>" + "<div class = 'results2'> <span class='result-number'>" + correct + "</span> Correct <br> <span class='result-number'>" + wrong + "</span> Wrong <br><span class='result-number'>" + unanswered + "</span> Blank</div></div></center>";
 
-
-    //adds a div containing the results of the quiz to the main-div
-    getMainDiv.append("<div id = 'results'>").html(correct + '<br>' + wrong + '<br>' + unanswered);
+    //appeds the results div to the main div
+    getMainDiv.append(resultsDiv);
 
 
     //prepends the "time remaining" div to the main-div

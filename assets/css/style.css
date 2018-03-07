@@ -69,7 +69,7 @@ header {
 }
 
 
-#pac1 {
+#pac-start {
     width: 500px;
     border-radius: 40px;
     border-style: solid;
@@ -84,7 +84,7 @@ header {
 #time-remaining {
     position: fixed;
     top: 135px;
-    left: 43vw;
+    left: 44vw;
     background-color: rgba(0, 0, 0, 0.9);
     color: #ffffff;
     font-size: 20px;
@@ -148,7 +148,7 @@ header {
 .start-over {
 
     position: relative;
-    left: 170px;
+    left: 175px;
     text-align: center;
     background-color: red;
     color: #000000;
@@ -156,7 +156,7 @@ header {
     font-size: 60px;
     text-shadow: 0px 5px 10px rgba(71, 71, 71, 1);
     padding: 10px 50px;
-    margin-top: 43px;
+    margin-top: 35px;
     margin-bottom: 10px;
     border-style: solid;
     border-width: 7px;
@@ -214,4 +214,75 @@ header {
     -webkit-box-shadow: 0px 0px 20px 2px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 20px 2px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 20px 2px rgba(0,0,0,0.75);
+}
+
+#pac-results {
+    display: inline-block;
+    border-radius: 40px;
+    border-style: solid;
+    border-width: 8px;
+    border-color: #000000;
+    margin-top: 40px;
+    -webkit-box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
+}
+
+#results-container {
+    display: inline-block;
+    margin-left: 20px;
+
+}
+
+.results {
+    text-align: center;
+    width: 200px;
+    font-size: 26px;
+    font-weight: bold;
+    background-color: hsla(0, 56%, 38%, 0.85);
+    color: #ffffff;
+    margin-top: 25px;
+    padding: 10px;
+    border-radius: 20px;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #000000;
+    -webkit-box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
+}
+
+.results2 {
+    line-height: 1.4;
+    text-align: center;
+    width: 250px;
+    font-size: 26px;
+    font-weight: bold;
+    background-color: hsla(0, 66%, 48%, 0.85);
+    color: #ffffff;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 20px;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #000000;
+    -webkit-box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
+}
+
+#score {
+    font-size: 50px;
+}
+
+.result-number {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 2px 5px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #000000;
+    font-weight: bold;
+    font-size: 16px;
 }
