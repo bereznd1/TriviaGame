@@ -134,7 +134,7 @@ function submit() {
 
     // QUESTION 1 CHECKER
 
-    // if at least one answer selected for question 1...
+    // if an answer was selected for question 1...
     if ($("input[name=question1]:checked").length > 0) {
 
 
@@ -162,7 +162,7 @@ function submit() {
 
     // QUESTION 2 CHECKER
 
-    // if at least one answer selected for question 2...
+    // if an answer was selected selected for question 2...
     if ($("input[name=question2]:checked").length > 0) {
 
 
@@ -191,7 +191,7 @@ function submit() {
 
     //QUESTION 3 CHECKER
 
-    // if at least one answer selected for question 3...
+    // if an answer was selected for question 3...
     if ($("input[name=question3]:checked").length > 0) {
 
 
@@ -220,7 +220,7 @@ function submit() {
 
     //QUESTION 4 CHECKER
 
-    // if at least one answer selected for question 4...
+    // if an answer was selected for question 4...
     if ($("input[name=question4]:checked").length > 0) {
 
 
@@ -249,7 +249,7 @@ function submit() {
 
     //QUESTION 5 CHECKER
 
-    // if at least one answer selected for question 5...
+    // if an answer was selected for question 5...
     if ($("input[name=question5]:checked").length > 0) {
 
 
@@ -277,7 +277,7 @@ function submit() {
 
     //QUESTION 6 CHECKER
 
-    // if at least one answer selected for question 6...
+    // if an answer was selected for question 6...
     if ($("input[name=question6]:checked").length > 0) {
 
 
@@ -305,7 +305,7 @@ function submit() {
 
     //QUESTION 7 CHECKER
 
-    // if at least one answer selected for question 7...
+    // if an answer was selected for question 7...
     if ($("input[name=question7]:checked").length > 0) {
 
 
@@ -332,7 +332,7 @@ function submit() {
 
     //QUESTION 8 CHECKER
 
-    // if at least one answer selected for question 8...
+    // if an answer was selected for question 8...
     if ($("input[name=question8]:checked").length > 0) {
 
 
@@ -360,7 +360,7 @@ function submit() {
 
     //QUESTION 9 CHECKER
 
-    // if at least one answer selected for question 9...
+    // if an answer was selected for question 9...
     if ($("input[name=question9]:checked").length > 0) {
 
 
@@ -389,7 +389,7 @@ function submit() {
 
     //QUESTION 10 CHECKER
 
-    // if at least one answer selected for question 10...
+    // if an answer was selected for question 10...
     if ($("input[name=question10]:checked").length > 0) {
 
 
