@@ -10,41 +10,43 @@ var fillTimeRemaining;
 
 
 //creates the html for each question & set of answers
-var q1 = "<p>What is question 1?</p><input type='radio' name='question1' id='q1option1'>Option 1<input type='radio' name='question1' id='q1option2'>Option 2<input type='radio' name='question1' id='q1option3'>Option 3<input type='radio' name='question1' id='q1option4'>CORRECT";
+var q1 = "<p>What was Tupac's birth name?</p><input type='radio' name='question1' id='q1option1'>Mutulu Shakur<input type='radio' name='question1' id='q1option2'>Tupac Amaru Shakur<input type='radio' name='question1' id='q1option3'>Radric Davis<input type='radio' name='question1' id='q1option4'>Lesane Parish Crooks";
 
-var q2 = "<p>What is question 2?</p><input type='radio' name='question2' id='q2option1'>Option 1<input type='radio' name='question2' id='q2option2'>Option 2<input type='radio' name='question2' id='q2option3'>CORRECT<input type='radio' name='question2' id='q2option4'>Option 4";
+var q2 = "<p>What prison was Tupac incarcerated in on a sexual assault charge?</p><input type='radio' name='question2' id='q2option1'>San Quentin State Prison<input type='radio' name='question2' id='q2option2'>Rikers Island<input type='radio' name='question2' id='q2option3'>Clinton Correctional Facility<input type='radio' name='question2' id='q2option4'>Guantanamo Bay";
 
-var q3 = "<p>What is question 3?</p><input type='radio' name='question3' id='q3option1'>CORRECT<input type='radio' name='question3' id='q3option2'>Option 2<input type='radio' name='question3' id='q3option3'>Option 3<input type='radio' name='question3' id='q3option4'>Option 4";
+var q3 = "<p>What was the first motion picture that Tupac starred in?</p><input type='radio' name='question3' id='q3option1'>Juice<input type='radio' name='question3' id='q3option2'>Above the Rim<input type='radio' name='question3' id='q3option3'>Boyz n the Hood<input type='radio' name='question3' id='q3option4'>Poetic Justice";
 
-var q4 = "<p>What is question 4?</p><input type='radio' name='question4' id='q4option1'>Option 1<input type='radio' name='question4' id='q4option2'>CORRECT<input type='radio' name='question4' id='q4option3'>Option 3<input type='radio' name='question4' id='q4option4'>Option 4";
+var q4 = "<p>What was Tupac's debut solo single?</p><input type='radio' name='question4' id='q4option1'>Trapped<input type='radio' name='question4' id='q4option2'>Brenda's Got A Baby<input type='radio' name='question4' id='q4option3'>If My Homie Calls<input type='radio' name='question4' id='q4option4'>I Get Around";
 
-var q5 = "<p>What is question 5?</p><input type='radio' name='question5' id='q5option1'>Option 1<input type='radio' name='question5' id='q5option2'>Option 2<input type='radio' name='question5' id='q5option3'>CORRECT<input type='radio' name='question5' id='q5option4'>Option 4";
+var q5 = "<p>Tupac may have repped the West Coast in his music, but he was actually born in New York, and moved to __________ in 1986, where he studied at a public arts High School, before finally relocating to Marin City, CA in 1988.</p><input type='radio' name='question5' id='q5option1'>Newark, NJ<input type='radio' name='question5' id='q5option2'>Chicago, IL<input type='radio' name='question5' id='q5option3'>Baltimore, MD<input type='radio' name='question5' id='q5option4'>Detroit, MI";
+
+var q6 = "<p>Tupac had a close friendship with the current wife of which famous actor?</p><input type='radio' name='question6' id='q6option1'>Will Smith<input type='radio' name='question6' id='q6option2'>Eddie Murphy<input type='radio' name='question6' id='q6option3'>Denzel Washington<input type='radio' name='question6' id='q6option4'>Martin Lawrence";
+
+var q7 = "<p>Which Tupac album made history as the first double-full-length hip-hop solo studio album released for mass consumption?</p><input type='radio' name='question7' id='q7option1'>Life After Death<input type='radio' name='question7' id='q7option2'>All Eyez On Me<input type='radio' name='question7' id='q7option3'>Me Against The World<input type='radio' name='question7' id='q7option4'>The Don Killuminati: The 7 Day Theory";
+
+var q8 = "<p>Which of the following rappers was NOT an original member of 'The Outlawz', a group founded by Tupac after his release from prison?</p><input type='radio' name='question8' id='q8option1'>Hussein Fatal<input type='radio' name='question8' id='q8option2'>Stretch<input type='radio' name='question8' id='q8option3'>Young Noble<input type='radio' name='question8' id='q8option4'>Storm";
+
+var q9 = "<p>The name Tupac Shakur is a reference to 'Túpac Amaru II', an 18th century political revolutionary from what country?</p><input type='radio' name='question9' id='q9option1'>Chile<input type='radio' name='question9' id='q9option2'>Nigeria<input type='radio' name='question9' id='q9option3'>Belize<input type='radio' name='question9' id='q9option4'>Peru";
+
+var q10 = "<p>Who inducted Tupac into the Rock N' Roll Hall of Fame in 2017?</p><input type='radio' name='question10' id='q10option1'>Snoop Dogg<input type='radio' name='question10' id='q10option2'>Ice Cube<input type='radio' name='question10' id='q10option3'>Dr. Dre<input type='radio' name='question10' id='q10option4'>Kendrick Lamar";
 
 
-
-//sets up a function that will get count down the seconds remaining in the quiz
+//sets up a function that will count down the seconds remaining in the quiz
 function answerCountDown() {
-    
     answerSeconds--;
-
     $("#time-left-during").html(answerSeconds);
-
-
-
-
 }
 
 
 
-// function to be called when game first starts or when the user clicks the "start over" button
+//function to be called when quiz first starts or when the user clicks the "start over" button
 function start() {
 
     //Creates a timer for how long the user has to fill out the quiz
-    answerTimer = setTimeout(submit, 31000);
-
+    answerTimer = setTimeout(submit, 301000);
 
     //Sets up on-screen seconds countdown
-    answerSeconds = 30;
+    answerSeconds = 300;
     answerTimeLeft = setInterval(answerCountDown, 1000);
 
 
@@ -78,8 +80,23 @@ function start() {
     var fillQ5 = $("<div id = 'question-5'>").html(q5);
     getMainDiv.append(fillQ5);
 
+    var fillQ6 = $("<div id = 'question-6'>").html(q6);
+    getMainDiv.append(fillQ6);
 
-    //creates a new div for the submit & appends it to the main-div
+    var fillQ7 = $("<div id = 'question-7'>").html(q7);
+    getMainDiv.append(fillQ7);
+
+    var fillQ8 = $("<div id = 'question-8'>").html(q8);
+    getMainDiv.append(fillQ8);
+
+    var fillQ9 = $("<div id = 'question-9'>").html(q9);
+    getMainDiv.append(fillQ9);
+
+    var fillQ10 = $("<div id = 'question-10'>").html(q10);
+    getMainDiv.append(fillQ10);
+
+
+    //creates a new div for the submit button & appends it to the main-div
     var fillSubmit = $("<button class='submit' onclick='submit()'>").text("Submit");
     getMainDiv.append(fillSubmit);
 
@@ -90,7 +107,7 @@ function start() {
 //Function which is activated when user clicks submit or when time runs out
 function submit() {
 
-
+    //clears the timer & on-screen seconds countdown
     clearTimeout(answerTimer);
     clearInterval(answerTimeLeft);
 
@@ -108,6 +125,11 @@ function submit() {
     var q3CorrectAnswer = $("#q3option1").prop("checked");
     var q4CorrectAnswer = $("#q4option2").prop("checked");
     var q5CorrectAnswer = $("#q5option3").prop("checked");
+    var q6CorrectAnswer = $("#q6option1").prop("checked");
+    var q7CorrectAnswer = $("#q7option2").prop("checked");
+    var q8CorrectAnswer = $("#q8option2").prop("checked");
+    var q9CorrectAnswer = $("#q9option4").prop("checked");
+    var q10CorrectAnswer = $("#105option1").prop("checked");
 
 
     // QUESTION 1 CHECKER
@@ -253,6 +275,146 @@ function submit() {
     }
 
 
+    //QUESTION 6 CHECKER
+
+    // if at least one answer selected for question 6...
+    if ($("input[name=question6]:checked").length > 0) {
+
+
+        //if the selected answer is the correct one, add a point to "correct" variable
+        if (q6CorrectAnswer) {
+            correct++;
+
+        }
+
+        //if the selected answer is NOT the correct one, add a point to "wrong" variable
+        else {
+
+            wrong++;
+        }
+
+    }
+
+    //if no answers selected, add a point to the "unanswered" variable
+    else {
+
+        unanswered++;
+
+    }
+
+
+    //QUESTION 7 CHECKER
+
+    // if at least one answer selected for question 7...
+    if ($("input[name=question7]:checked").length > 0) {
+
+
+        //if the selected answer is the correct one, add a point to "correct" variable
+        if (q7CorrectAnswer) {
+            correct++;
+
+        }
+
+        //if the selected answer is NOT the correct one, add a point to "wrong" variable
+        else {
+
+            wrong++;
+        }
+
+    }
+
+    //if no answers selected, add a point to the "unanswered" variable
+    else {
+
+        unanswered++;
+
+    }
+
+    //QUESTION 8 CHECKER
+
+    // if at least one answer selected for question 8...
+    if ($("input[name=question8]:checked").length > 0) {
+
+
+        //if the selected answer is the correct one, add a point to "correct" variable
+        if (q8CorrectAnswer) {
+            correct++;
+
+        }
+
+        //if the selected answer is NOT the correct one, add a point to "wrong" variable
+        else {
+
+            wrong++;
+        }
+
+    }
+
+    //if no answers selected, add a point to the "unanswered" variable
+    else {
+
+        unanswered++;
+
+    }
+
+
+    //QUESTION 9 CHECKER
+
+    // if at least one answer selected for question 9...
+    if ($("input[name=question9]:checked").length > 0) {
+
+
+        //if the selected answer is the correct one, add a point to "correct" variable
+        if (q9CorrectAnswer) {
+            correct++;
+
+        }
+
+        //if the selected answer is NOT the correct one, add a point to "wrong" variable
+        else {
+
+            wrong++;
+        }
+
+    }
+
+    //if no answers selected, add a point to the "unanswered" variable
+    else {
+
+        unanswered++;
+
+    }
+
+
+
+    //QUESTION 10 CHECKER
+
+    // if at least one answer selected for question 10...
+    if ($("input[name=question10]:checked").length > 0) {
+
+
+        //if the selected answer is the correct one, add a point to "correct" variable
+        if (q10CorrectAnswer) {
+            correct++;
+
+        }
+
+        //if the selected answer is NOT the correct one, add a point to "wrong" variable
+        else {
+
+            wrong++;
+        }
+
+    }
+
+    //if no answers selected, add a point to the "unanswered" variable
+    else {
+
+        unanswered++;
+
+    }
+
+
     //DISPLAYS RESULTS OF ANSWERS 
 
 
@@ -268,7 +430,7 @@ function submit() {
 
 
 
-
+    //adds a div containing the results of the quiz to the main-div
     getMainDiv.append("<div id = 'results'>").html(correct + '<br>' + wrong + '<br>' + unanswered);
 
 
@@ -280,7 +442,7 @@ function submit() {
 
 
     //create a variable to hold the html for the Start Over button & append that button to the main-div
-    var startOver = $("<br><button class = 'startOver' onclick = 'start()'>").text("Start Over!");
+    var startOver = $("<br><button class = 'start-over' onclick = 'start()'>").text("Start Over!");
     getMainDiv.append(startOver);
 
 

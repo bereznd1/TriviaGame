@@ -3,8 +3,8 @@ html {
 }
 
 #all-content {
-    width: 600px;
-    height: 91.6vh;
+    width: 800px;
+    height: auto;
     border-radius: 20px;
     margin: 0 auto;
     background-color: #7fe1ef;
@@ -32,6 +32,19 @@ header {
     font-size: 44px;
     padding: 10px 20px;
     border-style: none;
+
+}
+
+
+.start-over {
+
+    text-align: center;
+    background-color: red;
+    color: #ffffff;
+    font-size: 44px;
+    padding: 10px 20px;
+    border-style: none;
+
 
 }
 
