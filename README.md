@@ -3,7 +3,7 @@
 
 ![Timed "Tupac Trivia" Quiz](assets/images/tupacquiz_screenshot.png)
 
- [View Live!](https://bereznd1.github.io/TriviaGame/) 
+ [View Live!](https://bereznd1.github.io/Tupac-Trivia-Quiz/) 
 
 
 ## Brief Description
